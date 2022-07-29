@@ -1,18 +1,150 @@
-.hero{
-    background-image: url(./images/hero.jpg);
-    width: 100%;
-    height: 80vh;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position:relative;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
 }
 
-.text{
-    position: relative;
-    top: 250px;
+/* HERO BANNER */
+
+.hero {
+  background-image: url(./images/hero.jpg);
+  width: 100%;
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
 }
-.icons{
-    position:absolute;
-    bottom: 20px;
-    right: 20px;
+
+/* LOGO */
+
+.logo {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+}
+.logo p {
+  font-size: 40px;
+  color: rgb(19, 106, 69);
+}
+
+/* NAV */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(196, 235, 255);
+  align-items: center;
+}
+nav ul li {
+  display: inline;
+  padding-right: 50px;
+  font-size: 30px;
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(19, 106, 69);
+  transition: 0.2s ease-in;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+h1 {
+  font-size: 7.5rem;
+  color: black;
+  text-shadow: grey;
+}
+
+.text {
+  position: relative;
+  top: 525px;
+  text-align: center;
+  color: white;
+}
+.icons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
+
+.icons a {
+  color: white;
+  font-size: 3.5rem;
+  margin: 1rem;
+}
+
+.case-header {
+  text-align: center;
+  color: rgb(19, 106, 69);
+  font-size: 5rem;
+  margin: 0.5rem;
+}
+
+.case-studies-flex {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 0.5rem;
+}
+
+.thumbnail-1,
+.thumbnail-2,
+.thumbnail-3 {
+  border: 2px solid black;
+  height: 700px;
+  width: 700px;
+  padding: 0.5rem;
+  width: 700px;
+  height: 700px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail-1 {
+  background-image: url(images/solar-panel.jpg);
+}
+
+.thumbnail-2 {
+  background-image: url(images/global-warming.jpg);
+}
+
+.thumbnail-3 {
+  background-image: url(images/community.jpg);
+}
+
+.thumbnail-text,
+p {
+  padding-top: 0.5rem;
+}
+
+.thumbnail-text h4 {
+  font-size: 3.5rem;
+}
+
+.thumbnail-text p {
+  margin-right: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hidden {
+  /* display: none; */
+  color: red;
+  font-size: 3rem;
+}
+
+.thumbnail-1 .thumbnail-2,
+.thumbnail-3 :hover {
 }
