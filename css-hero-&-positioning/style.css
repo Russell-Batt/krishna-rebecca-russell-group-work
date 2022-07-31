@@ -1,27 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* UNIVERSAL STYLING */
 
-* {
+*{
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* HERO BANNER */
+/* VARIABLE DECLARATIONS */
 
-.hero{
-    background-image: url(./images/hero.jpg);
-    width: 100%;
-    height: 80vh;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    position:relative;
+:root{
+    --eerie-black: rgba(27, 30, 33, 1);
+    --charleston-green: rgba(42, 46, 47, 1);
+    --chestnut: rgba(141, 79, 56, 1);
+    --coyote-brown: rgba(147, 97, 64, 1);
+    --light-slate-gray: rgba(102, 135, 154, 1);
+    --dutch-white: rgba(232, 223, 194, 1);
+    --eggshell: rgba(246, 241, 222, 1);
+}
+
+body{
+    background-color: var(--eggshell);
 }
 
 /* LOGO */
 
-.logo {
+.logo{
     display: flex;
     text-align: center;
     align-items: center;
@@ -41,113 +47,151 @@
 /* NAV */
 
 header{
+    width: 100vw;
     display: flex;
     justify-content:space-between;
     padding: 20px;
-    background-color: rgb(196, 235, 255);
-    align-items: center;
-    
-}
-nav ul li {
+    background-color: var(--eggshell);
+    align-items: center; 
+}    
+
+nav ul li{
     display: inline;
     padding-right: 50px;
     font-size:30px ;
     list-style: none; 
-}
+}    
+
 nav ul li a{
     text-decoration:none;
-    color: rgb(19, 106, 69);
+    color: var(--eerie-black);
     transition: 0.2s ease-in;
     font-weight: bold;
     font-size: 3rem;
+}    
+
+/* HERO BANNER */
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    background-image: url(./images/hero.jpg);
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    justify-content: center;
+    align-items: center;
+}    
+
+
+/* MISSION STATEMENT */
+
+.mission-statement{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    max-height: 50%;
+    max-width: 80%;
+    background-color: var(--eggshell);
+    color: var(--eerie-black);
 }
 
-
-h1 {
-    font-size: 7.5rem;
-    color: black;
-    text-shadow: grey;
+h1{
+    font-size: 5rem;
 }
 
-.text{
-    position: relative;
-    top: 525px;
+.mission-statement p{
+    font-size: 1.8rem;
     text-align: center;
-    color: white;
 }
+
+/* SOCIAL MEDIA */
+
 .icons{
-    position:absolute;
-    bottom: 20px;
-    right: 20px;
-    color: white;
-
+    align-self: flex-end;
+    margin-top: auto;
 }
 
-
-.icons a {
-    color: white;
+.icons a{
+    color: var(--eggshell);
     font-size: 3.5rem;
     margin: 1rem;
 }
 
-.case-header {
+/* CASE STUDIES */
+
+.case-header{
     text-align: center;
-    color: rgb(19, 106, 69);
-    font-size: 5rem;
-    margin: 0.5rem;
+    color: var(--eerie-black);
+    font-size: 3.5rem;
+    margin: 2rem;
 }
 
-.case-studies-flex {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 0.5rem;
+.case-studies-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
 }
 
-.thumbnail-1, .thumbnail-2, .thumbnail-3 {
-    border: 2px solid black;
-    height: 700px;
+.case-studies-grid__item{
+    max-width: 710px;
+    border: 5px solid var(--charleston-green);
+    color: var(--eerie-black);
+}
+
+/* THUMBNAILS */
+
+.thumbnail{
+    height: 394px;
     width: 700px;
-    padding: 0.5rem;
-    width: 700px;
-    height: 700px;
+    border: 2px solid var(--charleston-green);
     background-size: cover;
     display: flex;
+}
+
+.grid__img-1{
+    background-image: url(images/solar-panel.jpg);
+}
+
+.grid__img-2{
+    background-image: url(images/global-warming.jpg);
+}
+
+.grid__img-3{
+    background-image: url(images/community.jpg);
+}
+
+/* HIDDEN TEXT IN THUMBNAIL IMAGES */
+
+.img-text{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: auto;
+    visibility: hidden;
+    color: var(--eerie-black);
+    font-size: 1.8rem;  
+    transition: backdrop-filter 0.4s;
+    backdrop-filter: blur(4px) opacity(0);
 }
 
-.thumbnail-1 {
-    background-image: url(images/solar-panel.jpg)
-}
-
-.thumbnail-2 {
-    background-image: url(images/global-warming.jpg)
-}
-
-.thumbnail-3 {
-    background-image: url(images/community.jpg)
-}
-
-.thumbnail-text, p {
-    padding-top: 0.5rem;
+.thumbnail:hover > .img-text{
+    visibility: visible;
+    backdrop-filter: blur(4px) opacity(1);
 }
 
 .thumbnail-text h4{
-    font-size: 3.5rem;
+    margin: 0.8rem;
+    font-size: 3em;
+    text-decoration: underline;
 }
 
-.thumbnail-text p {
-    margin-right: 2rem;
-    font-size: 2.5rem;
-    font-weight: bold;  
-}
-
-.hidden {
-    /* display: none; */
-    color: red;
-    font-size: 3rem;
-}
-
-.thumbnail-1 .thumbnail-2, .thumbnail-3 :hover {
-    
+.thumbnail-text p{
+    margin: 1rem;
+    font-size: 1.5rem;
 }
