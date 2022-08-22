@@ -67,7 +67,7 @@ h1 {
 
 .text {
   position: relative;
-  top: 525px;
+  top: 350px;
   text-align: center;
   color: white;
 }
@@ -141,10 +141,21 @@ p {
 
 .hidden {
   /* display: none; */
-  color: red;
+  color: rgba(0, 0, 0, 0);
   font-size: 3rem;
 }
 
-.thumbnail-1 .thumbnail-2,
+.thumbnail-1 :hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.thumbnail-2 :hover {
+  cursor: pointer;
+  color: blue;
+}
+
 .thumbnail-3 :hover {
+  cursor: pointer;
+  color: blue;
 }
